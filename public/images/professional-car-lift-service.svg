@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Professional car lift service">
+  <defs>
+    <linearGradient id="bg3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg3)"/>
+  <rect x="0" y="700" width="1200" height="200" fill="#dbeafe"/>
+  <g fill="#1e3a8a">
+    <rect x="150" y="470" width="800" height="170" rx="55"/>
+    <rect x="240" y="350" width="520" height="130" rx="25"/>
+    <rect x="330" y="430" width="150" height="90" rx="18"/>
+    <rect x="470" y="430" width="150" height="90" rx="18"/>
+    <rect x="620" y="430" width="110" height="90" rx="18"/>
+  </g>
+  <g fill="#93c5fd">
+    <rect x="270" y="375" width="58" height="45" rx="12"/>
+    <rect x="350" y="375" width="58" height="45" rx="12"/>
+    <rect x="430" y="375" width="58" height="45" rx="12"/>
+    <rect x="510" y="375" width="58" height="45" rx="12"/>
+  </g>
+  <g fill="#111827">
+    <circle cx="315" cy="640" r="52"/>
+    <circle cx="800" cy="640" r="52"/>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="430" cy="770" r="36"/>
+    <circle cx="645" cy="770" r="36"/>
+    <circle cx="860" cy="770" r="36"/>
+  </g>
+  <g fill="#1f2937">
+    <rect x="430" y="740" width="30" height="100" rx="15"/>
+    <rect x="645" y="740" width="30" height="100" rx="15"/>
+    <rect x="860" y="740" width="30" height="100" rx="15"/>
+  </g>
+  <g>
+    <circle cx="900" cy="180" r="120" fill="#ffffff" opacity="0.9"/>
+    <text x="880" y="230" font-size="72" font-weight="800" fill="#1d4ed8" font-family="Arial, Helvetica, sans-serif">MJ</text>
+  </g>
+</svg>

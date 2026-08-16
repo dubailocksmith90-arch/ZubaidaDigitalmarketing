@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 180" role="img" aria-label="MJ Car Lift UAE logo">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="18" width="144" height="144" rx="36" fill="url(#logoGradient)"/>
+  <path d="M38 116V52h28l24 30V52h26v64H90L66 86v30H38zm76 0V52h28v64H114z" fill="#ffffff" fill-rule="evenodd"/>
+  <circle cx="54" cy="112" r="10" fill="#ffffff"/>
+  <circle cx="102" cy="112" r="10" fill="#ffffff"/>
+  <path d="M170 52h50l38 28 38-28h32v76h-30V81l-40 30-40-30v47h-30V52z" fill="#0f172a"/>
+  <text x="292" y="98" font-size="32" font-weight="800" font-family="Arial, Helvetica, sans-serif" fill="#0f172a">MJ Car Lift</text>
+  <text x="292" y="126" font-size="20" font-weight="600" letter-spacing="2" font-family="Arial, Helvetica, sans-serif" fill="#475569">UAE</text>
+</svg>

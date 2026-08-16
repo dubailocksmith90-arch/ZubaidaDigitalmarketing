@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="MJ Car Lift UAE icon">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#bg)"/>
+  <path d="M26 96V36h20l18 22V36h18v60H66L48 74v22H26zm60 0V36h18v60H86z" fill="#ffffff" opacity="0.96"/>
+  <path d="M36 28h14v10H36zM78 28h14v10H78z" fill="#dbeafe" opacity="0.9"/>
+  <circle cx="42" cy="92" r="8" fill="#ffffff"/>
+  <circle cx="86" cy="92" r="8" fill="#ffffff"/>
+</svg>
