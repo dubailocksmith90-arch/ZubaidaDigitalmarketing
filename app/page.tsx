@@ -1,348 +1,407 @@
-'use client';
+import Link from 'next/link';
+import {
+  AlertTriangle,
+  ArrowRight,
+  BadgeCheck,
+  Clock3,
+  KeyRound,
+  Lock,
+  MapPin,
+  PhoneCall,
+  ShieldCheck,
+  Sparkles,
+  Wrench,
+  Zap,
+} from 'lucide-react';
 
-import { ArrowRight, BarChart3, Briefcase, CheckCircle2, MessageSquare, Search, ShieldCheck, Sparkles, TrendingUp, Users, Zap } from 'lucide-react';
-import { Navbar } from '@/components/Navbar';
-import { ServiceCard } from '@/components/ServiceCard';
-
-const trustItems = [
-  'Local SEO',
-  'Google Business Profile',
-  'Technical SEO',
-  'On-Page SEO',
-  'Keyword Research',
-  'Local Citations',
-  'Web Development',
-  'Content Strategy',
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'Services', href: '#services' },
+  { label: 'Why Us', href: '#why-us' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const services = [
   {
-    title: 'Local SEO',
-    description: 'Build stronger local visibility and attract customers searching for your services.',
+    title: 'Lock Repair & Replacement',
+    description: 'Fast repair and replacement for faulty, damaged, or worn-out locks in homes and businesses.',
+    icon: Wrench,
   },
   {
-    title: 'Google Business Profile',
-    description: 'Optimize your GBP for better local relevance, visibility, and customer actions.',
+    title: 'Door Opening',
+    description: 'Quick non-destructive entry for locked doors when you need urgent access without damage.',
+    icon: Lock,
   },
   {
-    title: 'Technical SEO',
-    description: 'Fix technical issues that prevent search engines from properly crawling and understanding your website.',
+    title: 'Lock Installation',
+    description: 'Professional lock fitting for doors, gates, and offices using secure, reliable locking systems.',
+    icon: ShieldCheck,
   },
   {
-    title: 'On-Page SEO',
-    description: 'Optimize pages around search intent, entities, topical relevance, and conversions.',
+    title: 'Key Services',
+    description: 'Replacement keys, copies, lock rekeying, and key cutting for residential and commercial needs.',
+    icon: KeyRound,
   },
   {
-    title: 'Local Citations & Authority',
-    description: 'Strengthen your local presence with consistent business information and relevant authority signals.',
-  },
-  {
-    title: 'SEO-Focused Web Development',
-    description: 'Build fast, modern websites designed for search visibility, user experience, and conversions.',
+    title: 'Emergency Locksmith',
+    description: 'Immediate assistance for lockouts, broken locks, and urgent security issues across Dubai.',
+    icon: AlertTriangle,
   },
 ];
 
-const approachSteps = [
-  {
-    title: 'Research',
-    description: 'Understand your market, competitors, customers, and search demand.',
-  },
-  {
-    title: 'Optimize',
-    description: 'Improve your website, Google Business Profile, content, and technical foundation.',
-  },
-  {
-    title: 'Build Authority',
-    description: 'Develop topical relevance, local signals, citations, and quality backlinks.',
-  },
-  {
-    title: 'Grow',
-    description: 'Track rankings, traffic, leads, and continuously improve performance.',
-  },
+const reasons = [
+  { title: 'Fast Response', description: 'Rapid arrival for urgent repairs and lockouts across Satwa and nearby areas.', icon: Clock3 },
+  { title: 'Professional Service', description: 'Skilled technicians who handle every job with precision and care.', icon: BadgeCheck },
+  { title: 'Affordable Pricing', description: 'Transparent quotes with fair pricing and no hidden surprises.', icon: Sparkles },
+  { title: 'Customer Satisfaction', description: 'Trusted service built on reliability, honesty, and dependable workmanship.', icon: ShieldCheck },
 ];
 
-const skills = ['SEO', 'Local SEO', 'Google Business Profile', 'WordPress', 'Next.js', 'React', 'Tailwind CSS', 'Google Search Console', 'Google Analytics', 'Technical SEO'];
-const industries = ['Locksmiths', 'Pressure Washing', 'Cleaning Companies', 'Car Detailing', 'Home Services', 'Roofing', 'Plumbing', 'Electricians', 'Small Local Businesses'];
+const trustPills = ['24/7 Support', 'Licensed Experts', 'Residential & Commercial', 'Secure Solutions'];
 
 export default function Home() {
   return (
-    <main id="home" className="min-h-screen bg-slate-50 text-slate-950">
-      <Navbar />
+    <main id="home" className="min-h-screen bg-[#f6f4ef] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f6f4ef]/90 backdrop-blur-xl">
+        <div className="container flex items-center justify-between py-4">
+          <Link href="#home" className="flex items-center gap-3" aria-label="Lock Repair Satwa home">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#c7a35c] text-lg font-black text-white shadow-lg shadow-[#c7a35c]/20">
+              <Lock size={20} />
+            </div>
+            <div>
+              <span className="block text-base font-extrabold tracking-wide text-slate-900">Lock Repair Satwa</span>
+              <span className="block text-[10px] uppercase tracking-[0.22em] text-slate-500">Trusted locksmith UAE</span>
+            </div>
+          </Link>
 
-      <section className="container py-20 sm:py-24">
-        <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="max-w-2xl space-y-8">
-            <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700 shadow-sm">
-              LOCAL SEO • DIGITAL MARKETING
+          <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="text-sm font-medium text-slate-700 transition hover:text-[#b78b37]">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:block">
+            <a
+              href="tel:+971526426161"
+              className="inline-flex items-center gap-2 rounded-full bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:bg-[#1f2937]"
+            >
+              <PhoneCall size={16} />
+              Call Now
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#f7f5f0] via-white to-[#f1efe9]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(199,163,92,0.18),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(15,23,42,0.07),transparent_35%)]" />
+        <div className="container relative grid gap-10 py-12 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-20">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#d2b77d]/40 bg-[#fffaf0] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#8b6d2f]">
+              <Zap size={12} />
+              Satwa Locksmith Experts
             </span>
-            <div className="space-y-6">
-              <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                Get Found on Google. Get More Local Customers.
-              </h1>
-              <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                I help local businesses improve Google rankings, dominate local search, and turn online visibility into real calls, leads, and customers.
-              </p>
+            <h1 className="mt-6 max-w-xl text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl lg:text-6xl">
+              Fast & Reliable Locksmith Services in Satwa, Dubai
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+              Professional lock repair, lock replacement, door opening, key services, and emergency locksmith assistance.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="tel:+971526426161"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f172a] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-[#1f2937]"
+              >
+                <PhoneCall size={18} />
+                Call Now
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#d2b77d] bg-[#fffaf0] px-6 py-3.5 text-sm font-semibold text-[#6f5528] transition hover:-translate-y-0.5 hover:border-[#c7a35c] hover:bg-[#f9f1dd]"
+              >
+                <ArrowRight size={18} />
+                Get Help Fast
+              </a>
             </div>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
-                Get Free SEO Audit
-              </a>
-              <a href="#services" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-indigo-300 hover:text-indigo-700">
-                View My Services
-              </a>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-700">
+              {trustPills.map((item) => (
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 shadow-sm">
+                  <BadgeCheck size={16} className="text-[#c7a35c]" />
+                  {item}
+                </span>
+              ))}
             </div>
 
-            <p className="text-sm font-medium uppercase tracking-[0.24em] text-slate-500">Local SEO • Google Business Profile • Technical SEO • Web Development</p>
+            <div className="mt-8 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_18px_40px_rgba(15,23,42,0.04)] w-fit">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0e2b7] text-[#7a5c1d]">
+                <PhoneCall size={20} />
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Call us now</p>
+                <a href="tel:+971526426161" className="mt-1 block text-lg font-bold text-slate-900 hover:text-[#8b6d2f]">
+                  +971 52 642 6161
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="relative">
-            <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-8 shadow-soft backdrop-blur-xl">
-              <div className="flex items-center justify-between gap-6">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Typical Growth Metrics</p>
-                  <h2 className="mt-2 text-2xl font-semibold text-slate-950">SEO Performance Snapshot</h2>
+            <div className="rounded-[2rem] border border-slate-200 bg-[#111827] p-4 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
+              <div className="rounded-[1.5rem] bg-gradient-to-br from-[#1f2937] via-[#111827] to-[#0f172a] p-6">
+                <div className="flex items-center justify-between text-sm text-slate-300">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#c7a35c]" />
+                    Available Now
+                  </span>
+                  <span>Satwa, Dubai</span>
                 </div>
-                <div className="rounded-3xl bg-indigo-50 px-4 py-3 text-indigo-700">Dashboard</div>
-              </div>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {[
-                  { label: 'Google Rankings', value: '+127%', color: 'from-indigo-500 to-violet-500' },
-                  { label: 'Organic Traffic', value: '+84%', color: 'from-sky-500 to-blue-500' },
-                  { label: 'Local Leads', value: '+63%', color: 'from-emerald-500 to-teal-500' },
-                ].map((stat) => (
-                  <div key={stat.label} className="rounded-3xl border border-slate-200/90 bg-slate-50 p-5">
-                    <p className="text-sm uppercase tracking-[0.2em] text-slate-500">{stat.label}</p>
-                    <p className="mt-4 text-3xl font-semibold text-slate-950">{stat.value}</p>
+                <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f8e7b6] text-[#1f2937] shadow-[0_20px_40px_rgba(199,163,92,0.3)]">
+                    <Lock size={30} />
                   </div>
-                ))}
-              </div>
 
-              <div className="mt-8 rounded-[1.75rem] border border-slate-200/70 bg-gradient-to-br from-indigo-600/10 via-transparent to-violet-600/5 p-6">
-                <div className="flex items-center justify-between text-sm text-slate-600">
-                  <span>Visibility</span>
-                  <span>Growth</span>
-                </div>
-                <div className="mt-5 h-40 rounded-[1.5rem] bg-slate-950/95 p-5 text-white shadow-inner">
-                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-slate-300">
-                    <span>Organic Search</span>
-                    <span>Weekly</span>
-                  </div>
-                  <div className="mt-5 flex h-full items-end gap-3">
-                    <div className="h-12 w-full rounded-3xl bg-slate-800" />
-                    <div className="h-24 w-full rounded-3xl bg-gradient-to-t from-indigo-500 to-sky-400" />
-                    <div className="h-32 w-full rounded-3xl bg-gradient-to-t from-violet-500 to-fuchsia-400" />
-                    <div className="h-20 w-full rounded-3xl bg-slate-700" />
+                  <h2 className="mt-6 text-2xl font-bold text-white">Locksmith Services for Homes, Offices & Shops</h2>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
+                    Reliable lock repairs, key replacement, emergency access, and secure lock upgrades for every property.
+                  </p>
+
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Response</p>
+                      <p className="mt-2 text-lg font-bold text-white">Fast</p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Support</p>
+                      <p className="mt-2 text-lg font-bold text-white">24/7</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-white py-10">
-        <div className="container flex flex-wrap items-center justify-center gap-3 text-sm text-slate-600">
-          {trustItems.map((item) => (
-            <span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2">{item}</span>
-          ))}
         </div>
       </section>
 
       <section id="services" className="container py-20 sm:py-24">
-        <div className="mb-12 max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.3em] text-indigo-700">Everything You Need to Win Local Search</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Services built for local visibility and growth.</h2>
+        <div className="mb-12 max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a77d2d]">Our Services</p>
+          <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 sm:text-4xl">
+            Trusted locksmith solutions built for speed and security
+          </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.title} title={service.title} description={service.description} />
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          {services.map(({ title, description, icon: Icon }) => (
+            <article
+              key={title}
+              className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-2 hover:border-[#d9c38a] hover:shadow-[0_24px_60px_rgba(19,24,38,0.09)]"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6efe1] text-[#7a5c1d] shadow-sm transition group-hover:bg-[#efe0b8]">
+                <Icon size={26} />
+              </div>
+              <h3 className="mt-5 text-xl font-bold text-slate-900">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      <section id="results" className="bg-slate-950 py-20 sm:py-24 text-white">
-        <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-sky-300">My Approach to Local SEO</p>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Strategy, optimization, authority, and growth.</h2>
-            <p className="max-w-xl text-base leading-8 text-slate-300">
-              Every campaign is built to improve visibility in local search, Google Business Profile performance, and on-site conversions with a measurable process.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {approachSteps.map((step, index) => (
-                <div key={step.title} className="rounded-3xl border border-slate-800/80 bg-slate-900/95 p-6">
-                  <div className="flex items-center gap-3 text-sky-300">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/5 text-base font-semibold">0{index + 1}</div>
-                    <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-                  </div>
-                  <p className="mt-4 text-sm leading-7 text-slate-300">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-800/70 bg-white/5 p-8 shadow-soft backdrop-blur-xl">
-            <div className="mb-8 flex items-center justify-between rounded-3xl bg-slate-950/75 p-6">
-              <div>
-                <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Local search progress</p>
-                <h3 className="mt-3 text-2xl font-semibold text-white">Growth chart</h3>
-              </div>
-              <div className="inline-flex items-center gap-2 rounded-3xl bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                <TrendingUp size={18} /> Results
-              </div>
-            </div>
-            <div className="space-y-5">
-              {['Visibility', 'Leads', 'Traffic', 'Authority'].map((metric, index) => (
-                <div key={metric} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm text-slate-400">
-                    <span>{metric}</span>
-                    <span>{50 + index * 12}%</span>
-                  </div>
-                  <div className="h-3 overflow-hidden rounded-full bg-slate-800">
-                    <div className={`h-full rounded-full bg-gradient-to-r ${index % 2 === 0 ? 'from-sky-400 to-indigo-500' : 'from-violet-500 to-fuchsia-500'}`} style={{ width: `${60 + index * 9}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="container py-20 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-indigo-700">Why Work With Zubaida?</p>
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Complete local growth systems that convert visibility into customers.</h2>
-            <p className="max-w-2xl text-base leading-8 text-slate-600">
-              I combine Local SEO, technical SEO, web development, and digital marketing to create complete growth systems for local businesses. My focus is simple: better visibility, stronger online presence, and more opportunities to generate customers.
-            </p>
-            <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-soft">
-              <p className="text-sm uppercase tracking-[0.3em] text-indigo-700">Highlight</p>
-              <p className="mt-4 text-xl font-semibold text-slate-950">SEO Strategy + Website + Google Visibility = Local Growth</p>
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {skills.map((skill) => (
-              <div key={skill} className="rounded-3xl border border-slate-200 bg-white p-5 text-slate-700 shadow-sm">
-                <div className="flex items-center gap-3 text-indigo-600">
-                  <ShieldCheck size={18} />
-                  <span className="font-semibold">{skill}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-20 text-white">
-        <div className="container">
-          <div className="mb-10 text-center">
-            <p className="text-sm uppercase tracking-[0.3em] text-sky-300">Helping Local Businesses Get Discovered</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Ideal clients I help scale with local search.</h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {industries.map((industry) => (
-              <div key={industry} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-center text-sm font-semibold text-slate-100 shadow-sm backdrop-blur-xl">
-                {industry}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="container py-20 sm:py-24" id="contact">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-indigo-700">Ready to Get More Customers From Google?</p>
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Let's find the opportunities your business is missing in local search.</h2>
-            <p className="max-w-xl text-base leading-8 text-slate-600">
-              I deliver practical, measurable SEO and local search support for businesses that need more leads, calls, and qualified traffic from Google.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-indigo-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-600">
-                Request Free SEO Audit
-              </a>
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-indigo-300">
-                Let's Talk
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft">
-            <form action="/api/contact" method="POST" className="space-y-5">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="space-y-2 text-sm text-slate-700">
-                  <span>Name</span>
-                  <input name="name" type="text" required className="input-field" placeholder="Your name" />
-                </label>
-                <label className="space-y-2 text-sm text-slate-700">
-                  <span>Business Name</span>
-                  <input name="business" type="text" required className="input-field" placeholder="Company name" />
-                </label>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="space-y-2 text-sm text-slate-700">
-                  <span>Website</span>
-                  <input name="website" type="url" className="input-field" placeholder="https://" />
-                </label>
-                <label className="space-y-2 text-sm text-slate-700">
-                  <span>Email</span>
-                  <input name="email" type="email" required className="input-field" placeholder="you@example.com" />
-                </label>
-              </div>
-
-              <label className="space-y-2 text-sm text-slate-700">
-                <span>What service do you need?</span>
-                <select name="service" required className="input-field">
-                  <option value="">Select a service</option>
-                  <option>Local SEO</option>
-                  <option>Google Business Profile</option>
-                  <option>Technical SEO</option>
-                  <option>On-Page SEO</option>
-                  <option>Web Development</option>
-                </select>
-              </label>
-
-              <label className="space-y-2 text-sm text-slate-700">
-                <span>Message</span>
-                <textarea name="message" rows={5} className="input-field" placeholder="Tell me about your goals"></textarea>
-              </label>
-
-              <button type="submit" className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-slate-800">
-                Request Free SEO Audit
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t border-slate-200 bg-slate-950 py-12 text-slate-300">
-        <div className="container grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-start md:gap-8">
+      <section id="why-us" className="bg-[#f1efe9] py-20 sm:py-24">
+        <div className="container grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
-            <p className="text-lg font-semibold text-white">Zubaida Digital Marketing Specialist</p>
-            <p className="mt-3 max-w-md text-sm leading-7 text-slate-400">Local SEO & Digital Marketing for Growth-Focused Businesses</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a77d2d]">Why Choose Us</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 sm:text-4xl">
+              Security you can trust, service you can rely on
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {reasons.map(({ title, description, icon: Icon }) => (
+                <div key={title} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#dcc58d] hover:shadow-[0_14px_32px_rgba(15,23,42,0.06)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6efe1] text-[#7a5c1d]">
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-slate-900">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Links</p>
-              <div className="mt-4 space-y-3 text-sm text-slate-300">
-                <a href="#home" className="block hover:text-white">Home</a>
-                <a href="#services" className="block hover:text-white">Services</a>
-                <a href="#about" className="block hover:text-white">About</a>
-                <a href="#contact" className="block hover:text-white">Contact</a>
+          <div className="rounded-[2rem] border border-slate-200 bg-[#0f172a] p-4 shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+            <div className="rounded-[1.5rem] bg-gradient-to-br from-[#1f2937] to-[#0f172a] p-6">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#d2b77d]/40 bg-[#fffaf0] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#7a5c1d]">
+                  <ShieldCheck size={12} />
+                  Secure & Safe
+                </span>
+                <span className="text-sm text-slate-300">Satwa Team</span>
+              </div>
+
+              <div className="mt-8 space-y-4">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Coverage</p>
+                  <p className="mt-2 text-lg font-bold text-white">Residential, commercial, and vehicle locks</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Service Type</p>
+                  <p className="mt-2 text-lg font-bold text-white">Repair, replacement, installation, and key service</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Availability</p>
+                  <p className="mt-2 text-lg font-bold text-white">Fast response for urgent and scheduled calls</p>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#0f172a] py-20 text-white sm:py-24">
+        <div className="container text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d6ba73]">Emergency Service</p>
+          <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">
+            Locked Out? Need Immediate Assistance?
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300">
+            We respond quickly to lockouts, broken locks, and urgent security issues in Satwa and surrounding areas.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <a
+              href="tel:+971526426161"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d6ba73] px-7 py-3.5 text-sm font-semibold text-[#111827] shadow-[0_15px_30px_rgba(214,186,115,0.35)] transition hover:-translate-y-0.5 hover:bg-[#e3c883]"
+            >
+              <PhoneCall size={18} />
+              Call Now
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              <ArrowRight size={18} />
+              Get Help Fast
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="container py-20 sm:py-24">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a77d2d]">Contact</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 sm:text-4xl">
+              Lock Repair Satwa
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Need a locksmith in Satwa, Dubai? Call for trusted lock repair, emergency access, and security upgrades.
+            </p>
+
+            <div className="mt-8 space-y-4">
+              <a
+                href="tel:+971526426161"
+                className="flex items-center gap-4 rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm transition hover:border-[#d9c38a] hover:bg-[#fffaf0]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f6efe1] text-[#7a5c1d]">
+                  <PhoneCall size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Phone</p>
+                  <p className="mt-1 text-lg font-bold text-slate-900">+971 52 642 6161</p>
+                </div>
+              </a>
+
+              <a
+                href="https://locksmith-dubai.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-4 rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm transition hover:border-[#d9c38a] hover:bg-[#fffaf0]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f6efe1] text-[#7a5c1d]">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Website</p>
+                  <p className="mt-1 text-lg font-bold text-slate-900">locksmith-dubai.com</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_25px_60px_rgba(15,23,42,0.06)] sm:p-8">
+            <div className="rounded-[1.5rem] bg-[#f7f5f0] p-5 text-center">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0f172a] text-white shadow-lg shadow-slate-200">
+                <Lock size={26} />
+              </div>
+              <h3 className="mt-5 text-2xl font-black tracking-[-0.04em] text-slate-900">Need a locksmith today?</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Reach out now for a quick assessment, honest pricing, and dependable service in Satwa, Dubai.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <a
+                  href="tel:+971526426161"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f172a] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#1f2937]"
+                >
+                  <PhoneCall size={18} />
+                  +971 52 642 6161
+                </a>
+                <a
+                  href="https://locksmith-dubai.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-400"
+                >
+                  locksmith-dubai.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="container py-10">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Social</p>
-              <div className="mt-4 flex flex-wrap gap-3 text-slate-300">
-                <a href="#" className="inline-flex items-center gap-2 text-sm hover:text-white">LinkedIn</a>
-                <a href="#" className="inline-flex items-center gap-2 text-sm hover:text-white">Facebook</a>
-                <a href="#" className="inline-flex items-center gap-2 text-sm hover:text-white">Instagram</a>
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#c7a35c] text-white">
+                  <Lock size={18} />
+                </div>
+                <div>
+                  <p className="text-lg font-black text-slate-900">Lock Repair Satwa</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 text-sm text-slate-600 md:items-end">
+              <a href="tel:+971526426161" className="font-medium text-slate-800 hover:text-[#8b6d2f]">
+                +971 52 642 6161
+              </a>
+              <a href="https://locksmith-dubai.com" target="_blank" rel="noreferrer" className="font-medium text-slate-800 hover:text-[#8b6d2f]">
+                locksmith-dubai.com
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
+            © 2026 Lock Repair Satwa. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-12px_30px_rgba(15,23,42,0.08)] backdrop-blur-sm md:hidden">
+        <a
+          href="tel:+971526426161"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0f172a] px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-slate-200"
+        >
+          <PhoneCall size={18} />
+          Call +971 52 642 6161
+        </a>
+      </div>
+    </main>
+  );
+}
+
               </div>
             </div>
           </div>

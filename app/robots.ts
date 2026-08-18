@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://mjcarliftuae.com/sitemap.xml',
-    host: 'https://mjcarliftuae.com',
+    sitemap: 'https://locksmith-dubai.com/sitemap.xml',
+    host: 'https://locksmith-dubai.com',
   };
 }

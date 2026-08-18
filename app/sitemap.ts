@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mjcarliftuae.com';
+  const baseUrl = 'https://locksmith-dubai.com';
 
   return [
     {

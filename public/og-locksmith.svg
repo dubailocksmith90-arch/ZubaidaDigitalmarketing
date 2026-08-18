@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F6F4EF"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#paint0_radial_1_2)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="36" fill="#111827"/>
+  <rect x="104" y="104" width="220" height="72" rx="18" fill="#C7A35C"/>
+  <path d="M174 134C174 122.954 181.954 115 193 115H226.5C237.546 115 245.5 122.954 245.5 134V159.625C245.5 168.227 239.353 175.5 230.883 177.295L206.033 182.923C201.825 183.891 197.453 183.891 193.245 182.923L168.395 177.295C159.925 175.5 153.778 168.227 153.778 159.625V134C153.778 122.954 161.732 115 172.778 115H174Z" fill="#111827"/>
+  <path d="M148 145H190V163C190 170.732 183.732 177 176 177H162C154.268 177 148 170.732 148 163V145Z" fill="#111827"/>
+  <circle cx="210" cy="154" r="19" fill="#F6F4EF"/>
+  <path d="M158 180H262" stroke="#F6F4EF" stroke-width="12" stroke-linecap="round"/>
+  <text x="104" y="276" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">Lock Repair Satwa</text>
+  <text x="104" y="338" fill="#E5E7EB" font-family="Arial, Helvetica, sans-serif" font-size="28">Fast &amp; Reliable Locksmith Services in Satwa, Dubai</text>
+  <text x="104" y="450" fill="#C7A35C" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Call +971 52 642 6161</text>
+  <g opacity="0.9">
+    <rect x="850" y="138" width="180" height="180" rx="26" fill="#F7F2E5"/>
+    <path d="M905 170C905 159.507 913.507 151 924 151H992C1002.49 151 1011 159.507 1011 170V213C1011 229.569 997.569 243 981 243H963C946.431 243 933 229.569 933 213V170H905V170Z" fill="#111827"/>
+    <rect x="918" y="206" width="46" height="69" rx="12" fill="#C7A35C"/>
+    <circle cx="941" cy="232" r="16" fill="#F6F4EF"/>
+    <path d="M865 296H1017" stroke="#C7A35C" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <defs>
+    <radialGradient id="paint0_radial_1_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(950 0) rotate(118.831) scale(743.434 1221.79)">
+      <stop stop-color="#D5B778" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#F6F4EF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

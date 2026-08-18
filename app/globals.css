@@ -4,10 +4,13 @@
 
 :root {
   color-scheme: light;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f8fafc;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f6f4ef;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  --brand-navy: #0f172a;
+  --brand-gold: #c7a35c;
+  --brand-sand: #f6f4ef;
 }
 
 html {
@@ -16,12 +19,22 @@ html {
 
 body {
   min-height: 100vh;
-  background: radial-gradient(circle at top right, rgba(59,130,246,0.14), transparent 24%), #f8fafc;
+  background: linear-gradient(180deg, #f6f4ef 0%, #ffffff 100%);
   color: #0f172a;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
 button,
@@ -32,26 +45,18 @@ select {
 }
 
 ::selection {
-  background-color: rgba(99,102,241,0.18);
-  color: #111827;
-}
-
-section {
-  position: relative;
-}
-
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  background: rgba(199, 163, 92, 0.22);
+  color: #0f172a;
 }
 
 .container {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1180px, calc(100% - 1.5rem));
   margin-inline: auto;
 }
 
-.input-field {
-  @apply w-full rounded-3xl border border-slate-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100;
+@media (min-width: 640px) {
+  .container {
+    width: min(1180px, calc(100% - 2rem));
+  }
 }
+

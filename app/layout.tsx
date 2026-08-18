@@ -2,45 +2,86 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Zubaida Digital Marketing Specialist | Local SEO Expert',
-  description: 'Local SEO Expert for small businesses. Get better Google visibility, more local leads, calls, and customers with optimized SEO and Google Business Profile support.',
-  metadataBase: new URL('https://zubaidadigital.com'),
+  metadataBase: new URL('https://locksmith-dubai.com'),
+  title: 'Lock Repair Satwa | Fast Locksmith Services in Dubai',
+  description:
+    'Professional locksmith services in Satwa, Dubai. Lock repair, lock replacement, door opening, key services, and emergency locksmith assistance. Call +971 52 642 6161.',
+  keywords: [
+    'Lock Repair Satwa',
+    'Emergency locksmith Dubai',
+    'Locksmith in Satwa',
+    'Lock replacement Dubai',
+    'Door opening service Dubai',
+    'Key services Dubai',
+    'Lock installation Dubai',
+  ],
+  applicationName: 'Lock Repair Satwa',
+  alternates: {
+    canonical: 'https://locksmith-dubai.com',
+  },
   openGraph: {
-    title: 'Zubaida Digital Marketing Specialist',
-    description: 'Local SEO Expert focused on Google visibility, local search optimization, and growth for local businesses.',
+    title: 'Lock Repair Satwa | Fast Locksmith Services in Dubai',
+    description:
+      'Professional locksmith services in Satwa, Dubai. Lock repair, lock replacement, door opening, key services, and emergency locksmith assistance.',
+    url: 'https://locksmith-dubai.com',
+    siteName: 'Lock Repair Satwa',
+    locale: 'en_US',
     type: 'website',
-    url: 'https://zubaidadigital.com',
-    siteName: 'Zubaida Digital Marketing Specialist',
+    images: [{ url: '/og-locksmith.svg', width: 1200, height: 630, alt: 'Lock Repair Satwa locksmith service' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zubaida Digital Marketing Specialist',
-    description: 'Local SEO Specialist helping local businesses get more visibility, leads, calls, and customers from Google.',
+    title: 'Lock Repair Satwa',
+    description: 'Fast and reliable locksmith services in Satwa, Dubai.',
+    images: ['/og-locksmith.svg'],
+  },
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
 };
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Zubaida Digital Marketing Specialist',
-  alternateName: 'Local SEO Expert',
-  url: 'https://zubaidadigital.com',
+  '@type': 'LocalBusiness',
+  name: 'Lock Repair Satwa',
+  image: 'https://locksmith-dubai.com/og-locksmith.svg',
+  telephone: '+971526426161',
+  url: 'https://locksmith-dubai.com',
   description:
-    'Professional Local SEO Consultant helping local businesses improve Google visibility, Google Business Profile performance, and website conversions.',
-  serviceType: 'Local SEO Services',
-  areaServed: 'Local businesses',
+    'Professional locksmith services in Satwa, Dubai including lock repair, lock replacement, door opening, key services, and emergency locksmith assistance.',
+  areaServed: ['Satwa', 'Dubai', 'UAE'],
+  priceRange: '$$',
+  openingHours: 'Mo-Su 00:00-23:59',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'AE',
+    addressLocality: 'Dubai',
+    streetAddress: 'Satwa, Dubai, UAE',
+  },
+  makesOffer: {
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: 'Locksmith Services',
+      areaServed: ['Satwa', 'Dubai'],
+      serviceType: 'Locksmith Service',
+    },
+  },
   keywords: [
-    'Local SEO Expert',
-    'Digital Marketing Specialist',
-    'Google Business Profile Optimization',
-    'Local Search Optimization',
-    'Technical SEO',
+    'Lock Repair Satwa',
+    'Emergency locksmith Dubai',
+    'Locksmith in Satwa',
+    'Lock replacement Dubai',
+    'Door opening service Dubai',
+    'Key services Dubai',
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
