@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   AlertTriangle,
@@ -13,10 +14,13 @@ import {
   Wrench,
   Zap,
 } from 'lucide-react';
+import HeroBackground from '@/components/HeroBackground';
+import { locksmithPhotos } from '@/lib/locksmith-photos';
 
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#work' },
   { label: 'Why Us', href: '#why-us' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -93,94 +97,76 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#f7f5f0] via-white to-[#f1efe9]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(199,163,92,0.18),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(15,23,42,0.07),transparent_35%)]" />
-        <div className="container relative grid gap-10 py-12 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-20">
+      <section className="relative overflow-hidden border-b border-slate-200">
+        <HeroBackground />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220]/92 via-[#0b1220]/78 to-[#0b1220]/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220]/70 via-transparent to-[#0b1220]/30" />
+        <div className="container relative grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#d2b77d]/40 bg-[#fffaf0] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#8b6d2f]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#f0d48a] backdrop-blur-sm">
               <Zap size={12} />
               Satwa Locksmith Experts
             </span>
-            <h1 className="mt-6 max-w-xl text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-6xl">
               Fast & Reliable Locksmith Services in Satwa, Dubai
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
               Professional lock repair, lock replacement, door opening, key services, and emergency locksmith assistance.
             </p>
 
             <div className="mt-7 flex flex-col gap-4 sm:flex-row">
               <a
                 href="tel:+971526426161"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f172a] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-[#1f2937]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d6ba73] px-6 py-3.5 text-sm font-semibold text-[#111827] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#e3c883]"
               >
                 <PhoneCall size={18} />
                 Call Now
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#d2b77d] bg-[#fffaf0] px-6 py-3.5 text-sm font-semibold text-[#6f5528] transition hover:-translate-y-0.5 hover:border-[#c7a35c] hover:bg-[#f9f1dd]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20"
               >
                 <ArrowRight size={18} />
                 Get Help Fast
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-700">
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-white">
               {trustPills.map((item) => (
-                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 shadow-sm">
-                  <BadgeCheck size={16} className="text-[#c7a35c]" />
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-sm">
+                  <BadgeCheck size={16} className="text-[#d6ba73]" />
                   {item}
                 </span>
               ))}
             </div>
 
-            <div className="mt-8 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_18px_40px_rgba(15,23,42,0.04)] w-fit">
+            <div className="mt-8 flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0e2b7] text-[#7a5c1d]">
                 <PhoneCall size={20} />
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Call us now</p>
-                <a href="tel:+971526426161" className="mt-1 block text-lg font-bold text-slate-900 hover:text-[#8b6d2f]">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-slate-300">Call us now</p>
+                <a href="tel:+971526426161" className="mt-1 block text-lg font-bold text-white hover:text-[#d6ba73]">
                   +971 52 642 6161
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="rounded-[2rem] border border-slate-200 bg-[#111827] p-4 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
-              <div className="rounded-[1.5rem] bg-gradient-to-br from-[#1f2937] via-[#111827] to-[#0f172a] p-6">
-                <div className="flex items-center justify-between text-sm text-slate-300">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#c7a35c]" />
-                    Available Now
-                  </span>
-                  <span>Satwa, Dubai</span>
-                </div>
-
-                <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f8e7b6] text-[#1f2937] shadow-[0_20px_40px_rgba(199,163,92,0.3)]">
-                    <Lock size={30} />
-                  </div>
-
-                  <h2 className="mt-6 text-2xl font-bold text-white">Locksmith Services for Homes, Offices & Shops</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">
-                    Reliable lock repairs, key replacement, emergency access, and secure lock upgrades for every property.
-                  </p>
-
-                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Response</p>
-                      <p className="mt-2 text-lg font-bold text-white">Fast</p>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Support</p>
-                      <p className="mt-2 text-lg font-bold text-white">24/7</p>
-                    </div>
-                  </div>
-                </div>
+          <div className="relative grid grid-cols-2 gap-3">
+            {locksmithPhotos.slice(0, 4).map((photo) => (
+              <div key={photo.src} className="relative overflow-hidden rounded-[1.5rem] border border-white/20 shadow-[0_18px_40px_rgba(0,0,0,0.28)]">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={photo.width}
+                  height={photo.height}
+                  quality={70}
+                  sizes="(max-width: 1024px) 50vw, 280px"
+                  className="h-36 w-full object-cover sm:h-44 lg:h-52"
+                />
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -209,6 +195,38 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="work" className="bg-white py-20 sm:py-24">
+        <div className="container">
+          <div className="mb-12 max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a77d2d]">Our Work</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 sm:text-4xl">
+              Real locksmith work, from door repairs to key cutting
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {locksmithPhotos.map((photo, index) => (
+              <figure
+                key={photo.src}
+                className={`relative overflow-hidden rounded-[1.75rem] border border-slate-200 shadow-[0_18px_45px_rgba(15,23,42,0.06)] ${
+                  index === 0 || index === locksmithPhotos.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
+                }`}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={photo.width}
+                  height={photo.height}
+                  quality={70}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+                  className="h-64 w-full object-cover sm:h-72"
+                />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="why-us" className="bg-[#f1efe9] py-20 sm:py-24">
         <div className="container grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
@@ -229,37 +247,41 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-slate-200 bg-[#0f172a] p-4 shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
-            <div className="rounded-[1.5rem] bg-gradient-to-br from-[#1f2937] to-[#0f172a] p-6">
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#d2b77d]/40 bg-[#fffaf0] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#7a5c1d]">
-                  <ShieldCheck size={12} />
-                  Secure & Safe
-                </span>
-                <span className="text-sm text-slate-300">Satwa Team</span>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Coverage</p>
-                  <p className="mt-2 text-lg font-bold text-white">Residential, commercial, and vehicle locks</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Service Type</p>
-                  <p className="mt-2 text-lg font-bold text-white">Repair, replacement, installation, and key service</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-slate-400">Availability</p>
-                  <p className="mt-2 text-lg font-bold text-white">Fast response for urgent and scheduled calls</p>
-                </div>
-              </div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+            <Image
+              src={locksmithPhotos[2].src}
+              alt={locksmithPhotos[2].alt}
+              width={locksmithPhotos[2].width}
+              height={locksmithPhotos[2].height}
+              quality={70}
+              sizes="(max-width: 1024px) 100vw, 540px"
+              className="h-full min-h-[420px] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/35 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 space-y-3 p-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#d2b77d]/40 bg-[#fffaf0] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#7a5c1d]">
+                <ShieldCheck size={12} />
+                Secure & Safe
+              </span>
+              <p className="text-lg font-bold text-white">Residential, commercial, and vehicle locks</p>
+              <p className="text-sm leading-6 text-slate-200">Repair, replacement, installation, and key service with fast response in Satwa.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#0f172a] py-20 text-white sm:py-24">
-        <div className="container text-center">
+      <section className="relative overflow-hidden py-20 text-white sm:py-24">
+        <Image
+          src={locksmithPhotos[6].src}
+          alt=""
+          fill
+          sizes="100vw"
+          quality={70}
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-[#0f172a]/82" />
+        <div className="container relative text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d6ba73]">Emergency Service</p>
           <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">
             Locked Out? Need Immediate Assistance?
@@ -401,13 +423,26 @@ export default function Home() {
     </main>
   );
 }
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <p className="mt-10 text-center text-sm text-slate-500">© 2026 Zubaida Digital Marketing Specialist. All rights reserved.</p>
-      </footer>
-    </main>
-  );
-}
+<section className="py-12 px-6 max-w-7xl mx-auto">
+  <h2 className="text-3xl font-bold text-center mb-8">Our Locksmith Work</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
+      <Image src="/images/locksmith/commercial-door.jpg" alt="Commercial Door Lock" fill className="object-cover" />
+    </div>
+    <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
+      <Image src="/images/locksmith/key-cutting.jpg" alt="Key Cutting" fill className="object-cover" />
+    </div>
+    <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
+      <Image src="/images/locksmith/lockbox-workbench.jpg" alt="Lock Box" fill className="object-cover" />
+    </div>
+    <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
+      <Image src="/images/locksmith/lock-mechanism.jpg" alt="Lock Mechanism" fill className="object-cover" />
+    </div>
+    <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
+      <Image src="/images/locksmith/lock-repair-mortise.jpg" alt="Lock Repair" fill className="object-cover" />
+    </div>
+    <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
+      <Image src="/images/locksmith/locksmith-technician.jpg" alt="Locksmith Technician" fill className="object-cover" />
+    </div>
+  </div>
+</section>
